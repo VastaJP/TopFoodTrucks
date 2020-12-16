@@ -2,7 +2,6 @@ form {
     display: inline-block;
     border: 1px solid;
     padding: 5%;
-    size: 100%;
   }
   div{
     display: block;
@@ -13,10 +12,4 @@ form {
     display: inline-block;
     padding-top: 5%;
     padding-bottom: 5%;
-  }
-  hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
