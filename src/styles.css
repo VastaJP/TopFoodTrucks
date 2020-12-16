@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: black; 
+    /* color: #48bed9; */
+    color: rgb(255, 255, 255);
+}
+/* input{
+    background-color:#ededed;
+} */

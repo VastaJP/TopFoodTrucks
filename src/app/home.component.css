@@ -1,0 +1,47 @@
+div.div-header{
+	background-color: black;
+}
+div h1{
+    background-color: black;
+    font-style: italic;
+    font-size: 400%;
+}
+div.div-login{
+	background-image: url('../images/GettyImages-1223977296.jpg');
+	padding-top: 5%;
+	padding-bottom: 8%;
+}
+form h5{
+    padding-top: 5%;
+}
+form {
+    display: inline-block;
+	border: 2px solid rgba(109, 109, 109, 0.465);
+	border-radius: 2%;
+    size: 100%;
+    /* padding-top: 8%;
+    padding-bottom: 5%; */
+}
+div.div-form-login{
+    
+}
+div.form-login{
+    
+}
+div{
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    display: inline-block;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+hr {
+    background-color: rgba(109, 109, 109, 0.465);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
