@@ -1,29 +1,55 @@
 
-<div class="form">
+<div class="signin">
 
-    <br><br><br>
+    <div class="div-form-signin">
+        <form>
+            <div class="form-signin-inputs">
 
-    <form>
-        <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre del evento">
-        </div>
-        <br>
-        <div>
-            <label for="lugar">Lugar</label>
-            <input type="text" class="form-control" id="lugar" placeholder="Ingrese lugar del evento">
-        </div>
-        <br>
-        <div>
-            <label for="fecha">Fecha</label>
-            <input type="text" class="form-control" id="fecha" placeholder="Ingrese la fecha del evento">
-        </div>
+                <label class="main-label">
+                    Si no tiene una cuenta, puede registrarse <br>
+                    ¡Es gratis!
+                </label>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nombreUsuario">Nombre</label>
+                        <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="apellidoUsuario">Apellido</label>
+                        <input type="text" class="form-control" id="apellidoUsuario" placeholder="Apellido">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-7">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="rolUsuario">Usted es...</label>
+                        <select id="rolUsuario" class="form-control">
+                            <option selected>FoodTrucker</option>
+                            <option>Organizador/a de eventos</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="contrasenia1">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasenia1" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="contrasenia1">Repetir contraseña</label>
+                        <input type="password" class="form-control" id="contrasenia1" placeholder="Repita su contraseña ingresada">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-outline-warning">Registrarse</button>
         
-        <br><br>
-
-        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
     
-    </form>
 </div>
 <br><br><br><br>
 
