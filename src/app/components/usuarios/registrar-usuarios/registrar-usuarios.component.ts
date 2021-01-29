@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormsModule, FormControl } from '@angular/forms';
-//import { UsuariosService } from "src/app/services/usuarios-service";
-import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-registrar-usuarios',
@@ -10,18 +8,21 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class RegistrarUsuariosComponent implements OnInit {
 
-  constructor(private usuariosService: UsuariosService) { }
+  nombre = '';
+  apellido = '';
+  email = '';
+  pass = '';
+  rolUsuario = '';
+
+  constructor() { }
   formRegistrar = new FormControl('');
   ngOnInit(): void {
   }
-  nombre = ""
-  apellido = ""
-  email = ""
-  pass = ""
-  rolUsuario = ""
 
-  onSubmit(formulario: NgForm){
-    UsuariosService.registrar(formulario.value.nombreUsuario, formulario.value.apellidoUsuario, 
-      formulario.value.email, formulario.value.rolUsuario, formulario.value.contrasenia1);
+  onSubmit(formulario: NgForm): void{ }
+
+  registrarUsuario(form: NgForm): void{
+
   }
+
 }

@@ -1,51 +1,95 @@
-
 <div class="signin">
-
-    <div class="div-form-signin">
-        <form (ngSubmit)="registrarUsuario(f)" #f="ngForm" method="POST">
-        <!-- <form #registrarUsuario="ngForm" (ngSubmit)="onSubmit(registrarUsuario)" method="POST" (click)="onSubmit(registrarUsuario)"> -->
-            <div class="form-signin-inputs">
-                <label class="main-label">
-                    Si no tiene una cuenta, puede registrarse <br>
-                    ¡Es gratis!
-                </label>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="nombreUsuario">Nombre</label>
-                        <input  name="nombreUsuario"  type="text" class="form-control" id="nombreUsuario" placeholder="Nombre de usuario" ngModel required >
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="apellidoUsuario">Apellido</label>
-                        <!-- <input do" name="apellidoUsuario" type="text" class="form-control" id="apellidoUsuario" placeholder="Apellido" required ngModel> -->
-                        <input name="apellidoUsuario" type="text" class="form-control" id="apellidoUsuario" placeholder="Apellido" ngModel required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-7">
-                        <label for="email">Correo electrónico</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email" ngModel required >
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="rolUsuario">Usted es...</label>
-                        <select name="rolUsuario" id="rolUsuario" class="form-control" ngModel required >
-                            <option selected>FoodTrucker</option>
-                            <option>Organizador/a de eventos</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="contrasenia1">Contraseña</label>
-                        <input name="contrasenia1" type="password" class="form-control" id="contrasenia1" placeholder="Ingrese su contraseña" ngModel required > 
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="contrasenia2">Repetir contraseña</label>
-                        <input name="contrasenia2" type="password" class="form-control" id="contrasenia2" placeholder="Repita su contraseña ingresada" ngModel required >
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-outline-warning">Registrarse</button>
-        </form>
-    </div>
+  <div class="div-form-signin">
+    <form (ngSubmit)="registrarUsuario(f)" #f="ngForm" method="POST">
+      <!-- <form #registrarUsuario="ngForm" (ngSubmit)="onSubmit(registrarUsuario)" method="POST" (click)="onSubmit(registrarUsuario)"> -->
+      <div class="form-signin-inputs">
+        <label class="main-label">
+          Si no tiene una cuenta, puede registrarse <br />
+          ¡Es gratis!
+        </label>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nombreUsuario">Nombre</label>
+            <input
+              name="nombreUsuario"
+              type="text"
+              class="form-control"
+              id="nombreUsuario"
+              placeholder="Nombre de usuario"
+              ngModel
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="apellidoUsuario">Apellido</label>
+            <!-- <input do" name="apellidoUsuario" type="text" class="form-control" id="apellidoUsuario" placeholder="Apellido" required ngModel> -->
+            <input
+              name="apellidoUsuario"
+              type="text"
+              class="form-control"
+              id="apellidoUsuario"
+              placeholder="Apellido"
+              ngModel
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-7">
+            <label for="email">Correo electrónico</label>
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+              ngModel
+              required
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <label for="rolUsuario">Usted es...</label>
+            <select
+              name="rolUsuario"
+              id="rolUsuario"
+              class="form-control"
+              ngModel
+              required
+            >
+              <option selected>FoodTrucker</option>
+              <option>Organizador/a de eventos</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="contrasenia1">Contraseña</label>
+            <input
+              name="contrasenia1"
+              type="password"
+              class="form-control"
+              id="contrasenia1"
+              placeholder="Ingrese su contraseña"
+              ngModel
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="contrasenia2">Repetir contraseña</label>
+            <input
+              name="contrasenia2"
+              type="password"
+              class="form-control"
+              id="contrasenia2"
+              placeholder="Repita su contraseña ingresada"
+              ngModel
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button [disabled]="f.invalid" mat-stroked-button color="primary" type="submit">Registrarse</button>
+    </form>
+  </div>
 </div>
-<br><br><br><br>
+<br /><br /><br /><br />
