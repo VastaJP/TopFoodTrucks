@@ -1,0 +1,26 @@
+<div class="div-login" style="padding-bottom: 20%;">
+
+    <div class="div-form-login">
+      <form class="form-group" (ngSubmit)="" action="eventosComponent()" method="GET">
+            <label class="main-label">Ingrese sus datos para iniciar sesión</label>
+            <br />
+
+          <div class="form-inputs">
+              <label for="email">Email</label>
+                <br />
+                <input class="input-login form-control" type="email" id="email" name="email" placeholder="Email"/>
+                <br /><br />
+
+                <label for="contrasenia">Contraseña</label>
+                <br />
+                <input class="input-login form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña"/>
+              </div>
+            
+            <br /><br />
+
+            <button class="btn btn-outline-warning">Ingresar</button>
+      </form>
+    </div>
+    
+</div>
+<app-registrar-usuarios></app-registrar-usuarios>

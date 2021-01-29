@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   	selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   	styleUrls: ['./home.component.css'],
 })
 export class AppComponent {
-  	title = 'TopFoodTrucks';
+	  title = 'TopFoodTrucks';
+	  
+	  constructor (private router: Router) {}
 }

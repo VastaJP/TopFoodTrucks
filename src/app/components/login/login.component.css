@@ -1,0 +1,71 @@
+div.div-header{
+    background-color: black;
+    font-family: monospace;
+    color: black;
+}
+div h1{
+    font-style: italic;
+    font-size: 600%;
+    text-shadow: -1px 0 #ffc107, 0 1px #ffc107, 1px 0 #ffc107, 0 -1px #ffc107;
+}
+div.div-login{
+	background-image: url('src/images/pexels-artem-saranin-1766686.jpg');
+    background-size: cover;
+    padding-top: 5%;
+	padding-bottom: 8%;
+}
+label.main-label{
+    padding-bottom: 8%;
+    font-size: x-large;
+}
+
+/* ------------------------ FORM INPUTS ------------------------ */
+div.form-inputs{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+div.form-inputs input{
+    background-color: #00000000;
+    border-color: #ffc107;
+    color: #ffc107;
+    
+}
+div.form-inputs input:focus{
+    background-color: rgb(0 254 235 / 12%);
+}
+div.div-form-login{
+    display: inline-block;
+    box-shadow: 0 0 10px #ffc107;
+    background-color: rgb(0 254 235 / 12%);
+    border-radius: 2%;
+    size: 100%;
+    padding: 5%;
+    font-weight: bolder;
+    color: #ffc107e3;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0  black, 0 -1px black;
+    /* text-shadow: -0.5px 0 #ffc107, 0 0.5px #ffc107, 0.5px 0 #ffc107, 0 -0.5px #ffc107 */
+    /* color: #ffc107; */
+}
+div{
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    display: inline-block;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+hr {
+    background-color:  #ffc1079b;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
+form button{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0  black, 0 -1px black;
+}
+form button:hover{
+    text-shadow: none;
+}

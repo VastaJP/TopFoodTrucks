@@ -3,32 +3,44 @@
 	<h1>Top Foodtrucks</h1>
 	<hr>
 </div>
+<nav>
+<a routerLink="/login" routerLinkActive="active">Login</a> |
+<a routerLink="/registrarse" routerLinkActive="active">Registrarse</a> |
+<a routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
+<a routerLink="/quienes-somos" routerLinkActive="active">Quienes somos?</a>
+</nav>
 
-<div class="div-login" style="padding-bottom: 20%;">
+<!-- Link de prueba: <a routerLink="/login" routerLinkActive="active">Login</a> <br>
+Link de prueba: <a routerLink="/registrar-eventos" routerLinkActive="active">Registrar eventos</a> -->
 
-  	<div class="div-form-login">
-    	<form class="form-group" action="eventosComponent()" method="GET">
-      		<label class="main-label">Ingrese sus datos para iniciar sesión</label>
-      		<br />
+<router-outlet></router-outlet> 
 
-			<div class="form-inputs">
-				<label for="email">Email</label>
-      			<br />
-      			<input class="input-login form-control" type="email" id="email" name="email" placeholder="Email"/>
-      			<br /><br />
+<!-- <div class="div-login" style="padding-bottom: 20%;">
 
-      			<label for="contrasenia">Contraseña</label>
-      			<br />
-      			<input class="input-login form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña"/>
-				</div>
-      		
-      		<br /><br />
+    <div class="div-form-login">
+      <form class="form-group" action="eventosComponent()" method="GET">
+            <label class="main-label">Ingrese sus datos para iniciar sesión</label>
+            <br />
 
-      		<button class="btn btn-outline-warning">Ingresar</button>
-    	</form>
-	  </div>
-	  
+          <div class="form-inputs">
+              <label for="email">Email</label>
+                <br />
+                <input class="input-login form-control" type="email" id="email" name="email" placeholder="Email"/>
+                <br /><br />
+
+                <label for="contrasenia">Contraseña</label>
+                <br />
+                <input class="input-login form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña"/>
+              </div>
+            
+            <br /><br />
+
+            <button class="btn btn-outline-warning">Ingresar</button>
+      </form>
+    </div>
+    
 </div>
 
+<app-registrar-usuarios></app-registrar-usuarios> -->
 
-<app-registrar-usuarios></app-registrar-usuarios>
+
