@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { RegistrarEventosComponent } from './components/eventos/registrar-eventos/registrar-eventos.component';
 import { RegistrarUsuariosComponent } from './components/usuarios/registrar-usuarios/registrar-usuarios.component';
 import { LoginComponent } from './components/login/login.component';
-import { QuienesSomosComponent } from './components/usuarios/registrar-usuarios/quienesSomos/quienes-somos/quienes-somos.component';
 import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 
 const routes: Routes = [
@@ -13,7 +12,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'registrarse', component: RegistrarUsuariosComponent},
   { path: 'registrar-evento', component: RegistrarEventosComponent},
-  { path: 'quienes-somos', component: QuienesSomosComponent},
   { path: 'foodtruck/:id', component: DetalleFoodtruckComponent}
 
 ];

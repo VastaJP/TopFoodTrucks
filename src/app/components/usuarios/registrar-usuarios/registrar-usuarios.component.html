@@ -53,11 +53,11 @@
               name="rolUsuario"
               id="rolUsuario"
               class="form-control"
-              ngModel
+              [(ngModel)]="selectRol"
               required
             >
-              <option selected>FoodTrucker</option>
-              <option>Organizador/a de eventos</option>
+              <option value="FoodTrucker" selected>FoodTrucker</option>
+              <option value="Organizador" >Organizador/a de eventos</option>
             </select>
           </div>
         </div>
