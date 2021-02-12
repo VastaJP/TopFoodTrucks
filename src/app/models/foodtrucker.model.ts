@@ -2,7 +2,7 @@ import { Foodtruck } from './foodtruck.model';
 
 export interface Foodtrucker{
 
-  idUsuario: number;
+  idUsuario: string;
   email: string;
   contrasenia: string;
   nombre: string;

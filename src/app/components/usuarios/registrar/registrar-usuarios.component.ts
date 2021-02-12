@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormsModule, FormControl } from '@angular/forms';
+import { Evento } from 'src/app/models/evento.model';
 import { Foodtruck } from 'src/app/models/foodtruck.model';
 import { Foodtrucker } from 'src/app/models/foodtrucker.model';
+import { OrganizadorEventos } from 'src/app/models/Organizador.model';
 import { FoodtruckerService } from 'src/app/services/foodtrucker.service';
+import { OrganizadorEventosService } from 'src/app/services/organizador.service';
 
 @Component({
   selector: 'app-registrar-usuarios',
@@ -12,10 +15,14 @@ import { FoodtruckerService } from 'src/app/services/foodtrucker.service';
 export class RegistrarUsuariosComponent implements OnInit {
 
   selectRol!: string;
+
   foodtrucker!: Foodtrucker;
   foodtruckNulo!: Foodtruck;
 
-  constructor(private foodtruckerService: FoodtruckerService) { }
+  organizador!: OrganizadorEventos;
+  eventosNulo!: Evento[];
+
+  constructor(private foodtruckerService: FoodtruckerService, private organizadorService: OrganizadorEventosService) { }
 
   ngOnInit(): void {
   }
@@ -27,18 +34,28 @@ export class RegistrarUsuariosComponent implements OnInit {
     console.log(form);
 
     // tslint:disable-next-line: triple-equals
-    if (this.selectRol == 'FoodTrucker') {
+    if (form.value.contrasenia1 == form.value.contrasenia2) {
       // tslint:disable-next-line: triple-equals
-      if (form.value.contrasenia1 == form.value.contrasenia2) {
-
+      if (this.selectRol == 'FoodTrucker') {
         this.foodtruckerService.registrarFoodtrucker(
           this.foodtrucker = {
-            idUsuario: 0,
+            idUsuario: '',
             nombre: form.value.nombreUsuario,
             apellido: form.value.apellidoUsuario,
             email: form.value.email,
             contrasenia: form.value.contrasenia1,
             foodtruck: this.foodtruckNulo,
+          });
+      }
+      else{
+        this.organizadorService.registrarOrganizador(
+          this.organizador = {
+            idUsuario: '',
+            nombre: form.value.nombreUsuario,
+            apellido: form.value.apellidoUsuario,
+            email: form.value.email,
+            contrasenia: form.value.contrasenia1,
+            eventos: this.eventosNulo,
           });
       }
     }
