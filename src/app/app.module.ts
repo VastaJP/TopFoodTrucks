@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { RegistrarEventosComponent } from './components/eventos/registrar-eventos/registrar-eventos.component';
-import { RegistrarUsuariosComponent } from './components/usuarios/registrar-usuarios/registrar-usuarios.component';
-import { LoginComponent } from './components/login/login.component';
+import { RegistrarUsuariosComponent } from './components/usuarios/registrar/registrar-usuarios.component';
+import { LoginComponent } from './components/usuarios/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 import { MaterialModule } from './material.module';
 import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
+import { InicioComponent } from './components/home/inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorComponent } from './components/usuarios/error/error.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistrarEventosComponent,
     RegistrarUsuariosComponent,
     LoginComponent,
-    DetalleFoodtruckComponent,
     RegistrarFoodtruckComponent,
+    InicioComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
