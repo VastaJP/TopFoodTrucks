@@ -11,6 +11,9 @@ import { LoginComponent } from './components/usuarios/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { InicioComponent } from './components/home/inicio/inicio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorComponent } from './components/usuarios/error/error.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { InicioComponent } from './components/home/inicio/inicio.component';
     RegistrarUsuariosComponent,
     LoginComponent,
     InicioComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { InicioComponent } from './components/home/inicio/inicio.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
