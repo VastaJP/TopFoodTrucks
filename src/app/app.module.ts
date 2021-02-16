@@ -11,6 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 import { MaterialModule } from './material.module';
+import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { MaterialModule } from './material.module';
     RegistrarUsuariosComponent,
     LoginComponent,
     DetalleFoodtruckComponent,
+    RegistrarFoodtruckComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { MaterialModule } from './material.module';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

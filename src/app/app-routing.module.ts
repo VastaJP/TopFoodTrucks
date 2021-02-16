@@ -6,12 +6,14 @@ import { RegistrarEventosComponent } from './components/eventos/registrar-evento
 import { RegistrarUsuariosComponent } from './components/usuarios/registrar-usuarios/registrar-usuarios.component';
 import { LoginComponent } from './components/login/login.component';
 import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
+import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'registrarse', component: RegistrarUsuariosComponent},
   { path: 'registrar-evento', component: RegistrarEventosComponent},
+  { path: 'foodtruck/nuevo', component: RegistrarFoodtruckComponent},
   { path: 'foodtruck/:id', component: DetalleFoodtruckComponent}
 
 ];
