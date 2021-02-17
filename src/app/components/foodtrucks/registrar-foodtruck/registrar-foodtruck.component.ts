@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Foodtruck } from 'src/app/models/foodtruck.model';
+import { Imagen } from 'src/app/models/imagen.model';
 import { FoodtruckService } from 'src/app/services/foodtruck.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { FoodtruckService } from 'src/app/services/foodtruck.service';
 export class RegistrarFoodtruckComponent implements OnInit {
 
   foodtruck!: Foodtruck;
+  imagenesNulo!: Imagen[];
 
   constructor(private foodtruckService: FoodtruckService) { }
 
@@ -30,6 +32,7 @@ export class RegistrarFoodtruckComponent implements OnInit {
         instagram: form.value.instagram,
         twitter: form.value.twitter,
         whatsapp: form.value.whatsapp,
+        imagenes: this.imagenesNulo,
       }
     );
   }

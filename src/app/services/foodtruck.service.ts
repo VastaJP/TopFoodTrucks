@@ -37,7 +37,7 @@ export class FoodtruckService {
                 website: response.website,
                 instagram: response.instagram,
                 twitter: response.twitter,
-                // imagen: response.imagen,
+                imagenes: response.imagenes,
             };
 
             this.foodtruckSubject.next(this.foodtruck);

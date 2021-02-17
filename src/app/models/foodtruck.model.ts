@@ -10,6 +10,6 @@ export interface Foodtruck {
   website: string;
   instagram: string;
   twitter: string;
-  //imagen: Imagen;    DESCOMENTAR
+  imagenes: Imagen[];
 
 }
