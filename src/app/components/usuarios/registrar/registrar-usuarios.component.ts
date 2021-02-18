@@ -37,8 +37,6 @@ export class RegistrarUsuariosComponent implements OnInit {
 
   registrarUsuario(form: NgForm): void{
 
-    console.log(form);
-
     // tslint:disable-next-line: triple-equals
     if (form.value.contrasenia1 == form.value.contrasenia2) {
       // tslint:disable-next-line: triple-equals
@@ -65,6 +63,7 @@ export class RegistrarUsuariosComponent implements OnInit {
           });
       }
     }
+    console.error('Las contraseñas no coinciden');
     // TODO Modal
     /*
     else{

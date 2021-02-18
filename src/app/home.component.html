@@ -1,19 +1,20 @@
 
 <div class="div-header">
 	<h1>Top Foodtrucks</h1>
-	<hr>
 </div>
-<nav>
-<a routerLink="/login" routerLinkActive="active">Login</a> |
-<a routerLink="/registrarse" routerLinkActive="active">Registrarse</a> |
-<a routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
-<a routerLink="/quienes-somos" routerLinkActive="active">Quienes somos?</a>
-</nav>
+<hr>
+<!-- <nav>
+<a *ngIf="!isLogged" routerLink="/login" routerLinkActive="active">Login</a> |
+<a *ngIf="!isLogged" routerLink="/registrarse" routerLinkActive="active">Registrarse</a> |
+<a *ngIf="rolUsuario == 'Organizador'" routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
+<a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/registrar-evento" routerLinkActive="active">Mi Foodtruck</a> |
+<a *ngIf="isLogged" routerLink="/inicio" routerLinkActive="active">Inicio</a>
+</nav> -->
 
 <!-- Link de prueba: <a routerLink="/login" routerLinkActive="active">Login</a> <br>
 Link de prueba: <a routerLink="/registrar-eventos" routerLinkActive="active">Registrar eventos</a> -->
 
-<router-outlet></router-outlet> 
+<router-outlet></router-outlet>
 
 <!-- <div class="div-login" style="padding-bottom: 20%;">
 
@@ -32,13 +33,13 @@ Link de prueba: <a routerLink="/registrar-eventos" routerLinkActive="active">Reg
                 <br />
                 <input class="input-login form-control" type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña"/>
               </div>
-            
+
             <br /><br />
 
             <button class="btn btn-outline-warning">Ingresar</button>
       </form>
     </div>
-    
+
 </div>
 
 <app-registrar-usuarios></app-registrar-usuarios> -->

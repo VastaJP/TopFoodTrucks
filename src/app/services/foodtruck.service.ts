@@ -21,11 +21,13 @@ export class FoodtruckService {
         const httpOptions = {
             headers: new HttpHeaders({
               idUsuario:  '1',
-              token: '1123456'
+              token: '1123456',
             })
           };
 
-        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, )
+        httpOptions.headers.append('Access-Control-Allow-Origin', '*');
+
+        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, httpOptions)
         // tslint:disable-next-line: deprecation
         .subscribe( (response: Foodtruck) => {
             this.foodtruck = {
