@@ -5,6 +5,7 @@ import { RegistrarEventosComponent } from './components/eventos/registrar-evento
 import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
 import { RegistrarUsuariosComponent } from './components/usuarios/registrar/registrar-usuarios.component';
 import { LoginComponent } from './components/usuarios/login/login.component';
+import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AuthGuard } from './components/seguridad/auth.guard';
 import { EditarPerfilComponent } from './components/usuarios/editar/editar-perfil.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'registrar-evento', component: RegistrarEventosComponent, canActivate: [AuthGuard]},
   { path: 'foodtruck/nuevo', component: RegistrarFoodtruckComponent},
   { path: 'editar-perfil', component: EditarPerfilComponent, canActivate: [AuthGuard]},
+  { path: 'foodtruck/:id', component: DetalleFoodtruckComponent}
 ];
 
 @NgModule({
