@@ -5,6 +5,7 @@ import { RegistrarEventosComponent } from './components/eventos/registrar-evento
 import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
 import { RegistrarUsuariosComponent } from './components/usuarios/registrar/registrar-usuarios.component';
 import { LoginComponent } from './components/usuarios/login/login.component';
+import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'registrarse', component: RegistrarUsuariosComponent},
   { path: 'registrar-evento', component: RegistrarEventosComponent},
   { path: 'foodtruck/nuevo', component: RegistrarFoodtruckComponent},
+  { path: 'foodtruck/:id', component: DetalleFoodtruckComponent}
 ];
 
 @NgModule({

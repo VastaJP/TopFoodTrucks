@@ -8,13 +8,14 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { RegistrarEventosComponent } from './components/eventos/registrar-eventos/registrar-eventos.component';
 import { RegistrarUsuariosComponent } from './components/usuarios/registrar/registrar-usuarios.component';
 import { LoginComponent } from './components/usuarios/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
 import { InicioComponent } from './components/home/inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorComponent } from './components/usuarios/error/error.component';
+import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ErrorComponent } from './components/usuarios/error/error.component';
     LoginComponent,
     RegistrarFoodtruckComponent,
     InicioComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetalleFoodtruckComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ErrorComponent } from './components/usuarios/error/error.component';
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
