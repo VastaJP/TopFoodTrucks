@@ -1,7 +1,10 @@
 <nav>
-  <a *ngIf="rolUsuario == 'Organizador'" routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
-  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/mi-foodtruck" routerLinkActive="active">Mi Foodtruck</a> |
-  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/editar-perfil" routerLinkActive="active">Editar mi perfil</a> |
+  <section>
+
+  </section>
+  <a *ngIf="rolUsuario == 'Organizador'" routerLink="/registrar-evento" routerLinkActive="active"> Registrar evento |</a>
+  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/mi-foodtruck" routerLinkActive="active"> Mi Foodtruck |</a>
+  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/editar-perfil" routerLinkActive="active"> Editar mi perfil |</a>
   <a (click)="logOut()" routerLink="/" routerLinkActive="active">Cerrar sesion</a>
 </nav>
 

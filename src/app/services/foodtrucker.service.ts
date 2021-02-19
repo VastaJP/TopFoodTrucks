@@ -117,4 +117,27 @@ export class FoodtruckerService {
     // this.foodtruckerSubject.next(true);
   }
 
+  getFoodtrucker(id: string, token: string): void {
+
+    const httpOptions =
+    {
+      headers: new HttpHeaders({
+        token,
+      })
+    };
+
+    this.http.get<Foodtrucker>( this.baseurl + `{id}`, httpOptions)
+    // tslint:disable-next-line: deprecation
+    .subscribe( (ft: Foodtrucker) => {
+      console.log(ft);
+    });
+
+  }
+
+  editarFoodtrucker(id: string, token: string): void {
+
+
+
+  }
+
 }
