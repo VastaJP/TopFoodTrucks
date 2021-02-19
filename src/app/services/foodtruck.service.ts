@@ -14,27 +14,31 @@ export class FoodtruckService {
     foodtruck!: Foodtruck;
     foodtruckSubject = new Subject<Foodtruck>();
 
-    private httpOptions = {
+    // private httpOptions = {
+    //     headers: new HttpHeaders({
+    //       idUsuario:  '1',
+    //       token: '1123456'
+    //     })
+    //   };
+
+    httpOptions = {
         headers: new HttpHeaders({
-          idUsuario:  '1',
-          token: '1123456'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Headers': 'Content-Type'
         })
       };
 
-    constructor(private http: HttpClient, private router: Router){}
+    constructor(private http: HttpClient, private router: Router, private loginSerivce: Login){}
+
+    public obtenerFoodtruck( id: string ): Observable<Foodtruck>{
+        return this.http.get<Foodtruck>('http://localhost:8080/ttps-spring/foodtruck/' + id, this.httpOptions);
+    }
 
     registrarFoodtruck(ft: Foodtruck): void{
-
-        const httpOptions = {
-            headers: new HttpHeaders({
-              idUsuario:  '1',
-              token: '1123456',
-            })
-          };
-
-        httpOptions.headers.append('Access-Control-Allow-Origin', '*');
-
-        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, httpOptions)
+        let usuario = localStorage.getItem('currentUser');
+        
+        console.log(usuario);
+        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, this.httpOptions)
         // tslint:disable-next-line: deprecation
         .subscribe( (response: Foodtruck) => {
             this.foodtruck = {
@@ -55,23 +59,8 @@ export class FoodtruckService {
     });
     }
 
-    obtenerFoodtruck( id: string ): void{
-        this.http.get<Foodtruck>(this.baseUrl + '/Foodtruck/' + id, this.httpOptions)
-        // tslint:disable-next-line: deprecation
-        .subscribe( (response: Foodtruck) => {
-            this.foodtruck = {
-                idFoodTruck: response.idFoodTruck,
-                nombre: response.nombre,
-                descripcion: response.descripcion,
-                servicio: response.servicio,
-                whatsapp: response.whatsapp,
-                website: response.website,
-                instagram: response.instagram,
-                twitter: response.twitter,
-                imagenes: response.imagenes,
-            };
-            this.foodtruckSubject.next(this.foodtruck);
-        } );
+    borrarFoodtruck( id: string): void{
+        // return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions)
     }
 
     obtenerActualListener(): Observable<Foodtruck>{
