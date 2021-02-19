@@ -1,0 +1,33 @@
+<nav>
+  <a *ngIf="rolUsuario == 'Organizador'" routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
+  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/mi-foodtruck" routerLinkActive="active">Mi Foodtruck</a> |
+  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/editar-perfil" routerLinkActive="active">Editar mi perfil</a> |
+  <a (click)="logOut()" routerLink="/" routerLinkActive="active">Cerrar sesion</a>
+</nav>
+
+<br><br>
+
+<div class="form">
+
+  <form>
+      <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre del evento">
+      </div>
+      <br>
+      <div>
+          <label for="lugar">Lugar</label>
+          <input type="text" class="form-control" id="lugar" placeholder="Ingrese lugar del evento">
+      </div>
+      <br>
+      <div>
+          <label for="fecha">Fecha</label>
+          <input type="text" class="form-control" id="fecha" placeholder="Ingrese la fecha del evento">
+      </div>
+
+      <br><br>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>

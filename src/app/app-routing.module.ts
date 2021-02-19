@@ -7,14 +7,16 @@ import { RegistrarUsuariosComponent } from './components/usuarios/registrar/regi
 import { LoginComponent } from './components/usuarios/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AuthGuard } from './components/seguridad/auth.guard';
+import { EditarPerfilComponent } from './components/usuarios/editar/editar-perfil.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'registrarse', component: RegistrarUsuariosComponent},
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard]},
-  { path: 'registrar-evento', component: RegistrarEventosComponent},
+  { path: 'registrar-evento', component: RegistrarEventosComponent, canActivate: [AuthGuard]},
   { path: 'foodtruck/nuevo', component: RegistrarFoodtruckComponent},
+  { path: 'editar-perfil', component: EditarPerfilComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorComponent } from './components/usuarios/error/error.component';
 import { LoginService } from './components/seguridad/login.service';
 import { AuthGuard } from './components/seguridad/auth.guard';
+import { EditarPerfilComponent } from './components/usuarios/editar/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthGuard } from './components/seguridad/auth.guard';
     LoginComponent,
     RegistrarFoodtruckComponent,
     InicioComponent,
-    ErrorComponent
+    ErrorComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,
