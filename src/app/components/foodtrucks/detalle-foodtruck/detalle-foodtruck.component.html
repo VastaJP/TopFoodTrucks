@@ -4,8 +4,13 @@
         <p>
             <b>Nombre:</b> {{foodtruck.nombre}} <br>
             <b>Descripcion:</b> {{foodtruck.descripcion}} <br>
-            <b>Servicio:</b> {{foodtruck.servicio}}
-
+            <b>Servicio:</b> {{foodtruck.servicio}} <br>
+            <b>Website: </b> {{foodtruck.website}} <br>
+            <b>Whatsapp: </b> {{foodtruck.whatsapp}} <br>
+            <b>Twitter: </b> {{foodtruck.twitter}} <br>
+            <b>Instagram: </b> {{foodtruck.instagram}} <br>
         </p>
+        <button mat-flat-button color="primary">Editar</button>
+        <button (click)="eliminar()" mat-flat-button color="warn">Eliminar</button>
     </mat-card-content>
 </mat-card>

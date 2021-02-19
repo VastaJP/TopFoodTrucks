@@ -35,4 +35,7 @@ export class DetalleFoodtruckComponent implements OnInit, OnDestroy {
     this.foodtruckSubscription.unsubscribe();
   }
 
+  eliminar(): void{
+    this.foodtruckService.borrarFoodtruck(this.foodtruck.idFoodTruck);
+  }
 }

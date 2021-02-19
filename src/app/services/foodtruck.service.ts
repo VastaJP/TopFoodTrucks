@@ -61,7 +61,7 @@ export class FoodtruckService {
     // });
     }
 
-    borrarFoodtruck( id: string): Observable<any>{
+    borrarFoodtruck( id: number): Observable<any>{
         return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions);
     }
 
