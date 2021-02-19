@@ -21,19 +21,19 @@ export class RegistrarFoodtruckComponent implements OnInit {
 
   registrarFoodtruck( form: NgForm): void {
     // console.log(form);
-
+    this.foodtruck = {
+      idFoodTruck: 0,
+      nombre: form.value.nombre,
+      servicio: form.value.servicio,
+      descripcion: form.value.descripcion,
+      website: form.value.website,
+      instagram: form.value.instagram,
+      twitter: form.value.twitter,
+      whatsapp: form.value.whatsapp,
+      imagenes: this.imagenesNulo,
+    };
     this.foodtruckService.registrarFoodtruck(
-      this.foodtruck = {
-        idFoodTruck: 0,
-        nombre: form.value.nombre,
-        servicio: form.value.servicio,
-        descripcion: form.value.descripcion,
-        website: form.value.website,
-        instagram: form.value.instagram,
-        twitter: form.value.twitter,
-        whatsapp: form.value.whatsapp,
-        imagenes: this.imagenesNulo,
-      }
+      this.foodtruck
     );
   }
 }

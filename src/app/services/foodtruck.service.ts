@@ -35,12 +35,12 @@ export class FoodtruckService {
         return this.http.get<Foodtruck>('http://localhost:8080/ttps-spring/foodtruck/' + id, this.httpOptions);
     }
 
-    registrarFoodtruck(ft: Foodtruck): Observable<Foodtruck>{
+    registrarFoodtruck(ft: Foodtruck): void{
         // let usuario = localStorage.getItem('currentUser');
         const usuario = this.loginService.getUserLoggedIn();
         console.log(usuario);
         const idUsuario = usuario.idUsuario;
-        return this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck/' + idUsuario, ft, this.httpOptions);
+        console.log(this.http.post<Foodtruck>('http://localhost:8080/ttps-spring/foodtruck/' + idUsuario, ft, this.httpOptions));
         // tslint:disable-next-line: deprecation
     //     .subscribe( (response: Foodtruck) => {
     //         this.foodtruck = {
