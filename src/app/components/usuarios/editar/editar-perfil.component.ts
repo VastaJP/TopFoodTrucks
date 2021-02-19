@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Foodtrucker } from 'src/app/models/foodtrucker.model';
 import { Usuario } from 'src/app/models/usuario.model';
 import { FoodtruckerService } from 'src/app/services/foodtrucker.service';
 import { LoginService } from '../../seguridad/login.service';
@@ -28,7 +29,12 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   editarPerfil(form: NgForm): void{
-    this.foodTruckerService.getFoodtrucker(this.usuario.idUsuario, this.usuario.token);
+    this.foodTruckerService.getFoodtrucker(this.usuario.idUsuario)
+      // tslint:disable-next-line: deprecation
+      .subscribe( (ft: Foodtrucker) => {
+        console.log(ft);
+      })
+      ;
   }
 
 }

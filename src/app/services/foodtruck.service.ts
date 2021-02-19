@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { LoginService } from '../components/seguridad/login.service';
 import { Foodtruck } from '../models/foodtruck.model';
 
 @Injectable({
@@ -28,7 +29,7 @@ export class FoodtruckService {
         })
       };
 
-    constructor(private http: HttpClient, private router: Router, private loginSerivce: Login){}
+    constructor(private http: HttpClient, private router: Router, private loginService: LoginService){}
 
     public obtenerFoodtruck( id: string ): Observable<Foodtruck>{
         return this.http.get<Foodtruck>('http://localhost:8080/ttps-spring/foodtruck/' + id, this.httpOptions);
