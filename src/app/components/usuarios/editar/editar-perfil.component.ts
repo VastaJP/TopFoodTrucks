@@ -14,7 +14,7 @@ export class EditarPerfilComponent implements OnInit {
 
   ngOnInit(): void {
 
-      this.rolUsuario = this.loginService.getUserLoggedIn().rol;
+    this.rolUsuario = this.loginService.getUserLoggedIn().rol;
 
   }
 
