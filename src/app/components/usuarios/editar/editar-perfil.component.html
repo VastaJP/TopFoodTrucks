@@ -9,20 +9,30 @@
 
 <div class="form">
 
-  <form>
+  <form
+    (ngSubmit)="editarPerfil(f)"
+    #f="ngForm"
+    method="POST"
+    class="form-group"
+  >
       <div>
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre del evento">
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
       </div>
       <br>
       <div>
-          <label for="lugar">Lugar</label>
-          <input type="text" class="form-control" id="lugar" placeholder="Ingrese lugar del evento">
+          <label for="lugar">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
       </div>
       <br>
       <div>
-          <label for="fecha">Fecha</label>
-          <input type="text" class="form-control" id="fecha" placeholder="Ingrese la fecha del evento">
+          <label for="fecha">Contrasenia anterior</label>
+          <input type="text" class="form-control" id="passViejo" placeholder="Ingrese su contrasenia vieja">
+      </div>
+      <br>
+      <div>
+          <label for="fecha">Contrasenia nueva</label>
+          <input type="text" class="form-control" id="passNuevo" placeholder="Ingrese su contrasenia">
       </div>
 
       <br><br>

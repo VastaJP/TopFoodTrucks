@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../seguridad/login.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class InicioComponent implements OnInit {
 
   rolUsuario!: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -20,6 +21,10 @@ export class InicioComponent implements OnInit {
 
   logOut(): void {
     this.loginService.logOut();
+  }
+
+  detalle(): void {
+    this.router.navigate(['foodtruck/' + 1]);
   }
 
 }

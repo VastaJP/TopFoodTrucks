@@ -49,7 +49,7 @@ export class FoodtruckerService {
 
   }
 
-  login(email: string, contrasenia: string): void {
+  login(email: string, contrasenia: string): Observable<HttpResponse<Headers>> {
 
     // Se preparan los header para mandar por request
     const httpOptions =
@@ -57,64 +57,35 @@ export class FoodtruckerService {
       headers: new HttpHeaders({
         email,
         contrasenia,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': 'Content-Type'
       }),
       observe: 'response' as const
       };
 
-    this.http.post<Headers>( this.baseurl + '/FoodTrucker/autenticacion', null, httpOptions)
-      // tslint:disable-next-line: deprecation
-      .subscribe(
-        (response: any) => {
-
-          // Obtengo las claves del token
-          const keys = response.headers.keys();
-          // Mapeo las claves para poder obtenerlas
-          const headers = keys.map( (key: any) =>
-            `${key}: ${response.headers.get(key)}`
-          );
-          if (headers[1]){
-          // Extraigo el valor del token en las 2da posicion de los header ('token: xxxxxxx'), lo corto y me quedo solo con el valor
-          const token = headers[1].split(': ')[1]; // xxxxxxx
-
-          if (!response.body) { // Usuario no existe
-            return;
-          }
-
-          this.foodtrucker = response.body;
-
-          // Obtengo los datos del usuario logueado
-          const usr = response.body;
-          this.usuario = {
-            nombre: usr.nombre,
-            apellido: usr.apellido,
-            contrasenia: usr.contrasenia,
-            email: usr.email,
-            idUsuario: usr.idUsuario,
-            rol: 'Foodtrucker',
-            // tslint:disable-next-line: object-literal-shorthand
-            token: token,
-          };
-
-          this.loginService.setUserLoggedIn(this.usuario);
-          this.foodtruckerSubject.next(this.foodtrucker);
-
-          this.router.navigate(['inicio']);
-
-          }
-        },
-        (error: HttpErrorResponse) => {
-          // tslint:disable-next-line: triple-equals
-          if (error.status == 403) {
-            console.error('Contraseña incorrecta');
-          // tslint:disable-next-line: triple-equals
-          } else if (error.status == 404) {
-            console.error('Mail inexistente');
-          }
-
-        }
-      );
+    return this.http.post<Headers>( this.baseurl + '/FoodTrucker/autenticacion', null, httpOptions)
 
     // this.foodtruckerSubject.next(true);
+  }
+
+  getFoodtrucker(id: string): Observable<Foodtrucker> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        token: id + '123456',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      })
+    };
+
+    return this.http.get<Foodtrucker>( this.baseurl + id, httpOptions);
+
+  }
+
+  editarFoodtrucker(id: string, token: string): void {
+
+
+
   }
 
 }

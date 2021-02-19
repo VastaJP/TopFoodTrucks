@@ -7,13 +7,13 @@ import { LoginService } from '../components/seguridad/login.service';
 import { Foodtruck } from '../models/foodtruck.model';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class FoodtruckService {
-    baseUrl = environment.baseUrl;
+  baseUrl = environment.baseUrl;
 
-    foodtruck!: Foodtruck;
-    foodtruckSubject = new Subject<Foodtruck>();
+  foodtruck!: Foodtruck;
+  foodtruckSubject = new Subject<Foodtruck>();
 
     // private httpOptions = {
     //     headers: new HttpHeaders({
@@ -65,8 +65,7 @@ export class FoodtruckService {
         return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions);
     }
 
-    obtenerActualListener(): Observable<Foodtruck>{
-        return this.foodtruckSubject.asObservable();
-    }
-
+  obtenerActualListener(): Observable<Foodtruck> {
+    return this.foodtruckSubject.asObservable();
+  }
 }

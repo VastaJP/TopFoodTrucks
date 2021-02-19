@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginService } from '../components/seguridad/login.service';
 import { OrganizadorEventos } from '../models/Organizador.model';
@@ -45,7 +45,7 @@ export class OrganizadorEventosService {
 
   }
 
-  login(email: string, contrasenia: string): void {
+  login(email: string, contrasenia: string): Observable<HttpResponse<Headers>> {
 
     // Se preparan los header para mandar por request
     const httpOptions =
@@ -57,55 +57,7 @@ export class OrganizadorEventosService {
       observe: 'response' as const
       };
 
-    this.http.post<Headers>( this.baseurl + '/Organizador/autenticacion', null, httpOptions)
-      // tslint:disable-next-line: deprecation
-      .subscribe( (response: any) => {
-
-        // Obtengo las claves del token
-        const keys = response.headers.keys();
-        // Mapeo las claves para poder obtenerlas
-        const headers = keys.map( (key: any) =>
-          `${key}: ${response.headers.get(key)}`
-        );
-        // Extraigo el valor del token en las 2da posicion de los header ('token: xxxxxxx'), lo corto y me quedo solo con el valor
-        const token = headers[1].split(': ')[1]; // xxxxxxx
-
-        if (!response.body) { // Usuario no existe
-          return;
-        }
-
-        this.organizador = response.body;
-
-        // Obtengo los datos del usuario logueado
-        const usr = response.body;
-        this.usuario = {
-          nombre: usr.nombre,
-          apellido: usr.apellido,
-          contrasenia: usr.contrasenia,
-          email: usr.email,
-          idUsuario: usr.idUsuario,
-          rol: 'Organizador',
-          // tslint:disable-next-line: object-literal-shorthand
-          token: token,
-        };
-
-        this.loginService.setUserLoggedIn(this.usuario);
-        this.organizadorSubject.next(this.organizador);
-
-        this.router.navigate(['inicio']);
-
-    },
-    (error: HttpErrorResponse) => {
-      // tslint:disable-next-line: triple-equals
-      if (error.status == 403) {
-        console.error('Contraseña incorrecta');
-      // tslint:disable-next-line: triple-equals
-      } else if (error.status == 404) {
-        console.error('Mail inexistente');
-      }
-
-    }
-  );
+    return this.http.post<Headers>( this.baseurl + '/Organizador/autenticacion', null, httpOptions);
 
   }
 
