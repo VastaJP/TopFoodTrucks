@@ -11,11 +11,13 @@ import { LoginComponent } from './components/usuarios/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { RegistrarFoodtruckComponent } from './components/foodtrucks/registrar-foodtruck/registrar-foodtruck.component';
-import { InicioComponent } from './components/home/inicio/inicio.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorComponent } from './components/usuarios/error/error.component';
 import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodtruck/detalle-foodtruck.component';
+import { LoginService } from './components/seguridad/login.service';
+import { AuthGuard } from './components/seguridad/auth.guard';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodt
     MatDialogModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ LoginService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

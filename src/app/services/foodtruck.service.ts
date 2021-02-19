@@ -24,7 +24,17 @@ export class FoodtruckService {
     constructor(private http: HttpClient, private router: Router){}
 
     registrarFoodtruck(ft: Foodtruck): void{
-        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft)
+
+        const httpOptions = {
+            headers: new HttpHeaders({
+              idUsuario:  '1',
+              token: '1123456',
+            })
+          };
+
+        httpOptions.headers.append('Access-Control-Allow-Origin', '*');
+
+        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, httpOptions)
         // tslint:disable-next-line: deprecation
         .subscribe( (response: Foodtruck) => {
             this.foodtruck = {

@@ -1,3 +1,8 @@
+<nav>
+  <a routerLink="/login" routerLinkActive="active">Login</a> |
+  <a routerLink="/registrarse" routerLinkActive="active">Registrarse</a>
+</nav>
+
 <div class="signin">
   <div class="div-form-signin">
     <form (ngSubmit)="registrarUsuario(f)" #f="ngForm" method="POST">

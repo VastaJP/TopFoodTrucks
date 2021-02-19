@@ -1,0 +1,15 @@
+<nav>
+  <a *ngIf="rolUsuario == 'Organizador'" routerLink="/registrar-evento" routerLinkActive="active">Registrar evento</a> |
+  <a *ngIf="rolUsuario == 'Foodtrucker'" routerLink="/registrar-evento" routerLinkActive="active">Mi Foodtruck</a> |
+  <a (click)="logOut()" routerLinkActive="active">Cerrar sesion</a>
+</nav>
+
+<section fxLayoutAlign="center">
+  <h1
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+  >
+    Hola, {{rolUsuario}}!
+  </h1>
+</section>
