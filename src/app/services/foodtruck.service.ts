@@ -35,33 +35,34 @@ export class FoodtruckService {
         return this.http.get<Foodtruck>('http://localhost:8080/ttps-spring/foodtruck/' + id, this.httpOptions);
     }
 
-    registrarFoodtruck(ft: Foodtruck): void{
-        let usuario = localStorage.getItem('currentUser');
-
+    registrarFoodtruck(ft: Foodtruck): Observable<Foodtruck>{
+        // let usuario = localStorage.getItem('currentUser');
+        const usuario = this.loginService.getUserLoggedIn();
         console.log(usuario);
-        this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck', ft, this.httpOptions)
+        const idUsuario = usuario.idUsuario;
+        return this.http.post<Foodtruck>(this.baseUrl + '/Foodtruck/' + idUsuario, ft, this.httpOptions);
         // tslint:disable-next-line: deprecation
-        .subscribe( (response: Foodtruck) => {
-            this.foodtruck = {
-                idFoodTruck: response.idFoodTruck,
-                nombre: response.nombre,
-                descripcion: response.descripcion,
-                servicio: response.servicio,
-                whatsapp: response.whatsapp,
-                website: response.website,
-                instagram: response.instagram,
-                twitter: response.twitter,
-                imagenes: response.imagenes,
-            };
-            console.log(this.foodtruck);
-            this.foodtruckSubject.next(this.foodtruck);
-            // this.router.navigate(['/foodtruck/' + this.foodtruck.idFoodTruck]);
-            this.router.navigate(['/home']);
-    });
+    //     .subscribe( (response: Foodtruck) => {
+    //         this.foodtruck = {
+    //             idFoodTruck: response.idFoodTruck,
+    //             nombre: response.nombre,
+    //             descripcion: response.descripcion,
+    //             servicio: response.servicio,
+    //             whatsapp: response.whatsapp,
+    //             website: response.website,
+    //             instagram: response.instagram,
+    //             twitter: response.twitter,
+    //             imagenes: response.imagenes,
+    //         };
+    //         console.log(this.foodtruck);
+    //         this.foodtruckSubject.next(this.foodtruck);
+    //         // this.router.navigate(['/foodtruck/' + this.foodtruck.idFoodTruck]);
+    //         this.router.navigate(['/home']);
+    // });
     }
 
-    borrarFoodtruck( id: string): void{
-        // return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions)
+    borrarFoodtruck( id: string): Observable<any>{
+        return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions);
     }
 
   obtenerActualListener(): Observable<Foodtruck> {

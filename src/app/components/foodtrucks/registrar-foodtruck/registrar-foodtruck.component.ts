@@ -20,7 +20,7 @@ export class RegistrarFoodtruckComponent implements OnInit {
   }
 
   registrarFoodtruck( form: NgForm): void {
-    console.log(form);
+    // console.log(form);
 
     this.foodtruckService.registrarFoodtruck(
       this.foodtruck = {
