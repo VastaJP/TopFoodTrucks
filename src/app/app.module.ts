@@ -19,6 +19,7 @@ import { DetalleFoodtruckComponent } from './components/foodtrucks/detalle-foodt
 import { LoginService } from './components/seguridad/login.service';
 import { AuthGuard } from './components/seguridad/auth.guard';
 import { EditarPerfilComponent } from './components/usuarios/editar/editar-perfil.component';
+import { EditarFoodtruckComponent } from './components/foodtrucks/editar-foodtruck/editar-foodtruck.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditarPerfilComponent } from './components/usuarios/editar/editar-perfi
     InicioComponent,
     ErrorComponent,
     EditarPerfilComponent,
-    DetalleFoodtruckComponent
+    DetalleFoodtruckComponent,
+    EditarFoodtruckComponent
   ],
   imports: [
     BrowserModule,

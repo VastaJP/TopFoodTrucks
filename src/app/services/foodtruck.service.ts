@@ -65,6 +65,12 @@ export class FoodtruckService {
         return this.http.delete(this.baseUrl + '/Foodtruck/' + id, this.httpOptions);
     }
 
+    editarFoodtruck(ft: Foodtruck): any {
+
+      return this.http.put<Foodtruck>(this.baseUrl + '/Foodtruck/' + ft.idFoodTruck, ft, this.httpOptions);
+
+    }
+
   obtenerActualListener(): Observable<Foodtruck> {
     return this.foodtruckSubject.asObservable();
   }

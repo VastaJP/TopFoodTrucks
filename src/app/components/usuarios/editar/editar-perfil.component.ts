@@ -15,6 +15,8 @@ export class EditarPerfilComponent implements OnInit {
   usuario!: Usuario;
   rolUsuario!: string;
 
+  foodtrucker!: Foodtrucker;
+
   constructor(private loginService: LoginService, private foodTruckerService: FoodtruckerService) { }
 
   ngOnInit(): void {
@@ -32,9 +34,14 @@ export class EditarPerfilComponent implements OnInit {
     this.foodTruckerService.getFoodtrucker(this.usuario.idUsuario)
       // tslint:disable-next-line: deprecation
       .subscribe( (ft: Foodtrucker) => {
-        console.log(ft);
-      })
-      ;
+        this.foodtrucker = ft;
+      });
+
+    this.foodtrucker.nombre = form.value.nombre;
+    this.foodtrucker.nombre = form.value.apellido;
+
+    this.foodTruckerService.editarFoodtrucker(this.foodtrucker);
+
   }
 
 }

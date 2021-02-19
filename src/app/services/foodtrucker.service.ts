@@ -78,13 +78,20 @@ export class FoodtruckerService {
       })
     };
 
-    return this.http.get<Foodtrucker>( this.baseurl + id, httpOptions);
+    return this.http.get<Foodtrucker>( this.baseurl + '/Foodtrucker/' + id, httpOptions);
 
   }
 
-  editarFoodtrucker(id: string, token: string): void {
+  editarFoodtrucker(foodtrucker: Foodtrucker): Observable<any> {
 
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      })
+    };
 
+    return this.http.post<Foodtrucker>(this.baseurl + '/Foodtrucker/' + foodtrucker.idUsuario, foodtrucker, httpOptions)
 
   }
 
